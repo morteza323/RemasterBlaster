@@ -1,0 +1,20 @@
+# UV Reconstruction Studio -- requirements
+#
+# CORE (required -- used by everything except the GUI):
+Pillow>=10.0
+numpy>=1.24
+opencv-python-headless>=4.9
+psutil>=5.9
+
+# GUI (required only to run ui/app.py):
+# Not installed in the build/test sandbox this project was developed
+# in (no network access to add it) -- ui/ is therefore delivered as
+# source only, syntax-checked but NOT executed or verified. Uncomment
+# and install this to actually run the desktop application:
+# PyQt6>=6.6
+
+# Real-ESRGAN and Flux.2 are external CLI executables/models, not
+# Python packages (spec §82) -- point engines/flux2/config.py's
+# Flux2Profile.executable / engines/realesrgan/config.py's
+# RealESRGANProfile.executable at your local install. No pip entry
+# needed for either.

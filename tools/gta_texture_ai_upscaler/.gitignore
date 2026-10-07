@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Project runtime
+logs/
+data/jobs/*.db
+data/jobs/*.db-*
+data/embeddings/*
+!data/embeddings/.gitkeep
+output/
+input/*
+!input/.gitkeep
+
+# Models (too large)
+models/*.gguf
+models/*.safetensors
+models/*.bin
+models/*.pt
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp

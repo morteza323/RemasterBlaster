@@ -1,0 +1,8 @@
+GTA SA texture knowledge sources used for the built-in conservative lexicon:
+
+1) VGTextureArchive/GTASanAndreas — public dump of original GTA San Andreas PNG textures. Its GitHub page reports that 20,842 entries were omitted from the rendered 1,000-file listing, showing the scale of the archive.
+2) Kronavarb/Original-Textures-Mipmapped — original GTA SA TXD archive names, including vehicle/building/area dictionaries.
+3) Google61/gta3sa.app txd.txt — texture database records containing texture names and properties such as width/height/alpha mode.
+4) GTAMods Wiki — GTA SA game directory, RenderWare Texture Dictionary/TXD structure and texture archive documentation.
+
+Names/codes are weak context only. Unknown/model/zone codes are marked as non-material identifiers. Image pixels remain authoritative.

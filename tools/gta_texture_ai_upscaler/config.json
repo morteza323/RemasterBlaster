@@ -1,0 +1,13 @@
+{
+    "model": "gemini-2.5-flash",
+    "scale_factor": 4,
+    "max_threads": 4,
+    "samplers": {
+        "graffiti_decal": "DDIM / UniPC",
+        "normal_texture": "DPM++ 2M Karras"
+    },
+    "prompts": {
+        "graffiti_decal": "upscale this image, preserve exact text, letters, vector-like sharp edges, exact original visual identity, do not add new elements or extra details",
+        "normal_texture": "8k resolution, hyper-detailed photorealistic surface texture, micro-surface details, natural roughness, realistic PBR material, crisp depth, preserve original color palette"
+    }
+}

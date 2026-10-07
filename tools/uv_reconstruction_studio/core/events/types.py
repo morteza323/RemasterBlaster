@@ -1,0 +1,42 @@
+"""
+Centralized event vocabulary.
+
+Spec §7 (UNIFIED EVENT SYSTEM): the GUI and CLI must never invent their
+own status strings independently. Every subsystem publishes through the
+EventBus using one of these types, and both the GUI and CLI subscribe
+to the same stream.
+"""
+
+from enum import Enum, unique
+
+
+@unique
+class EventType(str, Enum):
+    JOB_CREATED = "JOB_CREATED"
+    JOB_STARTED = "JOB_STARTED"
+    JOB_PROGRESS = "JOB_PROGRESS"
+    JOB_LOG = "JOB_LOG"
+    JOB_WARNING = "JOB_WARNING"
+    JOB_ERROR = "JOB_ERROR"
+    JOB_COMPLETED = "JOB_COMPLETED"
+    JOB_FAILED = "JOB_FAILED"
+    JOB_CANCELLED = "JOB_CANCELLED"
+
+    ENGINE_STARTED = "ENGINE_STARTED"
+    ENGINE_STDOUT = "ENGINE_STDOUT"
+    ENGINE_STDERR = "ENGINE_STDERR"
+    ENGINE_VALIDATION = "ENGINE_VALIDATION"
+    ENGINE_ERROR = "ENGINE_ERROR"
+
+    PART_CREATED = "PART_CREATED"
+    PART_UPDATED = "PART_UPDATED"
+    PART_ACCEPTED = "PART_ACCEPTED"
+    PART_REJECTED = "PART_REJECTED"
+
+    REASSEMBLY_STARTED = "REASSEMBLY_STARTED"
+    REASSEMBLY_PROGRESS = "REASSEMBLY_PROGRESS"
+    REASSEMBLY_COMPLETED = "REASSEMBLY_COMPLETED"
+
+    PROJECT_SAVED = "PROJECT_SAVED"
+    PROJECT_LOADED = "PROJECT_LOADED"
+    PROJECT_RECOVERED = "PROJECT_RECOVERED"

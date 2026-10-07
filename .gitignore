@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+logs/
+*.tmp
+*.bak
+
+# Database / session files (user specific)
+*.db
+qa_session.json
+jobs.db
+
+# Large model files (users should download separately)
+*.bin
+*.param
+*.safetensors
+*.gguf
+models/*.pth
+models/*.onnx
+
+# Personal config / hard-coded paths
+# (keep the example configs)
+config.local.json
+*.local.py

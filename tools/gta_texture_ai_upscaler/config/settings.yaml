@@ -1,0 +1,88 @@
+app:
+  name: GTA Texture AI Upscaler
+  version: 6.0.0
+  data_dir: data
+  log_dir: logs
+  input_dir: H:/gta sa textures/original
+  output_dir: H:/gta sa textures/upscaled
+  handmade_dir: H:/gta sa textures/fucked up fixed with ai
+models:
+  diffusion_gguf: H:/flux2/sd-master-6b3edaa-bin-win-cuda12-x64/flux-2-klein-4b-Q4_K_M.gguf
+  text_encoder: H:/flux2/sd-master-6b3edaa-bin-win-cuda12-x64/Qwen3-4B-Q4_K_M.gguf
+  vae: H:/flux2/sd-master-6b3edaa-bin-win-cuda12-x64/flux2_ae.safetensors
+  sd_cli: H:/flux2/sd-master-6b3edaa-bin-win-cuda12-x64/sd-cli.exe
+  upscale_model: ''
+inference:
+  target_long_side: 512
+  max_side: 512
+  min_side: 64
+  size_multiple: 8
+  width: 512
+  height: 512
+  steps: 3
+  cfg_scale: 0.8
+  sampling_method: euler
+  strength: 1.0
+  diffusion_fa: true
+  pre_upscale_source: false
+  pre_upscale_filter: LANCZOS
+  post_sharpen: 1.0
+  post_detail_radius: 1.0
+  offload_to_cpu: true
+  preserve_filename: true
+  force_png_extension: false
+  upscale_repeats: 1
+  upscale_tile_size: 128
+  png_compress_level: 6
+  fidelity_fusion: false
+  filename_material_hints: false
+  fidelity_mid_strength: 0.62
+  fidelity_high_strength: 0.88
+  fidelity_blur_small: 1.6
+  fidelity_blur_large: 5.0
+  fidelity_color_strength: 0.9
+  image_analysis_hints: true
+  gta_knowledge_base: false
+  custom_knowledge_txt: ''
+  uv_context_hints: false
+  preserve_source_colors: false
+  color_hue_strength: 0.98
+  color_saturation_strength: 0.92
+  color_value_drift_limit: 0.22
+  color_detail_strength: 0.55
+prompt:
+  master_prompt_file: config/master_prompt.txt
+  embedding_cache: data/embeddings/master_prompt.emb
+hardware:
+  gpu_pause_temp_c: 75
+  gpu_resume_temp_c: 62
+  thermal_check_interval: 60
+  cpu_pause_temp_c: 75
+  cpu_resume_temp_c: 65
+  max_ram_percent: 82
+  min_free_ram_mb: 2048
+  min_free_vram_mb: 800
+  vram_warn_percent: 90
+  max_cpu_percent: 92
+  cpu_high_pause_seconds: 45
+  rest_every_hours: 1
+  rest_duration_minutes: 5
+batch:
+  jobs_before_cooldown: 35
+  cooldown_seconds: 50
+  max_retries: 2
+  atomic_write: true
+  consecutive_fail_pause: 5
+  consecutive_fail_pause_seconds: 120
+database:
+  path: data/jobs/jobs.db
+logging:
+  level: INFO
+  file: logs/upscaler.log
+  max_size_mb: 50
+  backup_count: 8
+knowledge:
+  builtin_file: knowledge/gta_sa_keywords.txt
+  custom_txt: ''
+  enabled: true
+  max_prompt_entries: 12
